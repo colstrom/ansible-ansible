@@ -1,0 +1,36 @@
+---
+- name: Directory Exists | /etc/ansible
+  file:
+    state: directory
+    path: /etc/ansible
+    owner: root
+    group: wcadmin
+    mode: 775
+  tags:
+    - directory-structure
+    - configuration
+    - ansible
+
+- name: Upload Config | Ansible | Hosts
+  template:
+    src: etc/ansible/hosts
+    dest: /etc/ansible/hosts
+    owner: root
+    group: wcadmin
+    mode: 0664
+  tags:
+    - configuration
+    - template-configuration
+    - ansible
+
+- name: Upload Config | Ansible | Settings
+  template:
+    src: etc/ansible/ansible.cfg
+    dest: /etc/ansible/ansible.cfg
+    owner: root
+    group: wcadmin
+    mode: 0664
+  tags:
+    - configuration
+    - template-configuration
+    - ansible
