@@ -19,8 +19,8 @@
     group: wcadmin
     mode: 0664
   tags:
-    - configuration
     - template-configuration
+    - configuration
     - ansible
 
 - name: Upload Config | Ansible | Settings
@@ -31,6 +31,6 @@
     group: wcadmin
     mode: 0664
   tags:
-    - configuration
     - template-configuration
+    - configuration
     - ansible
