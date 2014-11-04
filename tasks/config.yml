@@ -24,13 +24,8 @@
     - ansible
 
 - name: Upload Config | Ansible | Settings
-  template:
-    src: etc/ansible/ansible.cfg
+  file:
+    state: absent
     dest: /etc/ansible/ansible.cfg
-    owner: root
-    group: wcadmin
-    mode: 0664
   tags:
-    - template-configuration
-    - configuration
-    - ansible
+    - cleanup
