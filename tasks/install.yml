@@ -1,7 +1,7 @@
 ---
 - name: Install Packages | pip
   pip:
-    state: latest
+    executable: /usr/local/bin/pip2
     name: "{{ item }}"
   with_items:
     - ansible
