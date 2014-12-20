@@ -1,0 +1,6 @@
+---
+dependencies:
+  - role: package/python
+    python_legacy_support: yes
+    python_packages:
+      - ansible
