@@ -5,7 +5,7 @@
     path: /etc/ansible
     owner: root
     group: wcadmin
-    mode: 775
+    mode: 0775
   tags:
     - directory-structure
     - configuration
@@ -13,19 +13,22 @@
 
 - name: Upload Config | Ansible | Hosts
   template:
-    src: etc/ansible/hosts
-    dest: /etc/ansible/hosts
+    src: "{{ item }}"
+    dest: "/{{ item }}"
     owner: root
     group: wcadmin
     mode: 0664
+  with_items:
+    - etc/ansible/hosts 
+    - etc/ansible/ansible.cfg
   tags:
     - template-configuration
     - configuration
     - ansible
 
-- name: Upload Config | Ansible | Settings
-  file:
-    state: absent
-    dest: /etc/ansible/ansible.cfg
-  tags:
-    - cleanup
+# - name: Upload Config | Ansible | Settings
+#   file:
+#     state: absent
+#     dest: /etc/ansible/ansible.cfg
+#   tags:
+#     - cleanup
