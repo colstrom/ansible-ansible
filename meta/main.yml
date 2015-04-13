@@ -4,3 +4,14 @@ dependencies:
     python_legacy_support: yes
     python_packages:
       - ansible
+galaxy_info:
+  author: Chris Olstrom
+  company: TELUS digital
+  description: Ansible is Simple IT Automation
+  license: MIT
+  platforms:
+    - name: Ubuntu
+      versions:
+      - trusty
+  categories:
+    - automation
