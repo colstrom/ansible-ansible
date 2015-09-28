@@ -1,0 +1,4 @@
+---
+ansible_forks_default: 128
+ansible_host_key_checking_default: yes
+ansible_privilege_escalation_default: no
