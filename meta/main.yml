@@ -1,17 +1,17 @@
 ---
 dependencies:
-  - role: colstrom.python
-    python_legacy_support: yes
-    python_packages:
-      - ansible
+- role: colstrom.apt-repository
+  repository_key: "0x93c4a3fd7bb9c367"
+  repository_url: "deb http://ppa.launchpad.net/ansible/ansible/ubuntu {{ ansible_distribution_release }} main"
 galaxy_info:
   author: Chris Olstrom
-  company: TELUS digital
   description: Ansible is Simple IT Automation
   license: MIT
   platforms:
-    - name: Ubuntu
-      versions:
-      - trusty
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+    - vivid
   categories:
-    - automation
+  - automation
