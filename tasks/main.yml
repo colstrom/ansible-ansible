@@ -1,2 +1,30 @@
 ---
-- include: configure.yml
+- apt:
+    state: latest
+    pkg: ansible
+  tags:
+  - ansible
+  - install
+
+- file:
+    state: directory
+    path: /etc/ansible
+    owner: root
+    group: staff
+    mode: 0775
+  tags:
+  - ansible
+  - mkdir
+
+- template:
+    src: "{{ item }}"
+    dest: "/{{ item }}"
+    owner: root
+    group: staff
+    mode: 0664
+  with_items:
+  - etc/ansible/hosts
+  - etc/ansible/ansible.cfg
+  tags:
+  - ansible
+  - configure
